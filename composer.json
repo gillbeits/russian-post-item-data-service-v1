@@ -1,0 +1,24 @@
+{
+  "name": "gillbeits/russian-post-item-data-service-v1",
+  "description": "Classes for use Item Data Service Russian Post SOAP",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Ivan Koretskiy",
+      "email": "gillbeits@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "symfony/validator": "~2.7",
+    "doctrine/annotations": "~1.2",
+    "doctrine/cache": "~1.4",
+    "zendframework/zend-soap": "~2.5"
+  },
+  "autoload": {
+    "psr-0": {
+      "RPItemDataService": "src/"
+    }
+  }
+}
