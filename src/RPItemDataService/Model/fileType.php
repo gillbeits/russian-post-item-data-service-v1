@@ -15,8 +15,8 @@ class fileType
 {
     use ExtendProperties;
     /**
-     * @var itemType
-     * @Assert\Type("\RPItemDataService\Model\itemType")
+     * @var itemType[]
+     * @Assert\Type("array")
      * @Assert\Valid
      */
     protected $Item;
@@ -49,11 +49,17 @@ class fileType
     protected $DatePreparation;
 
     /**
-     * @param itemType $Item
+     * @param itemType|itemType[] $Item
      * @return $this
      */
     public function setItem($Item)
     {
+        if (is_object($Item)) $Item = [$Item];
+        foreach ($Item as &$_item) {
+            if (!($_item instanceof itemType)) {
+                $_item = new itemType($_item, $this->annotationReader);
+            }
+        }
         $this->Item = $Item;
         return $this;
     }
