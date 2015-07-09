@@ -19,4 +19,21 @@ class ticketResponseType extends Response
      * @var errorType
      */
     protected $error;
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @return errorType
+     */
+    public function getError()
+    {
+        return $this->error;
+    }
+
 }
