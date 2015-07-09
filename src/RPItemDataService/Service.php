@@ -91,7 +91,7 @@ class Service
      */
     public function getTicket(ticketRequestType $ticketRequest)
     {
-        return new ticketResponseType($this->__setRequest($ticketRequest)->client->getTicket($ticketRequest));
+        return new ticketResponseType($this->__setRequest($ticketRequest)->client->getTicket($ticketRequest), $this->annotationReader);
     }
 
     /**
