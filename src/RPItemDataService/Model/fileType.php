@@ -116,11 +116,11 @@ class fileType
     }
 
     /**
-     * @return itemType
+     * @return itemType[]
      */
     public function getItem()
     {
-        return $this->Item;
+        return is_object($this->Item) ? [$this->Item] : $this->Item;
     }
 
     /**
